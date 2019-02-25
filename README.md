@@ -1,9 +1,7 @@
 # Kuberpress
 Kuberpress is a sample project of deploying a wordpress two tier web application with mysql on Kubernetes with NFS server as persitent volume, Ingress routing and a Python script to store database node ip logs as init container. 
 
-## Steps
-
-### Step 1 - Run NFS server and client
+## Step 1 - Run NFS server and client
 Install nfs-kernel-server on `NFS server` - Ubuntu 18.0.4
 ```
 sudo apt-get update
@@ -41,7 +39,7 @@ sudo mount 172.20.10.3:/var/nfs/general /nfs/general
 ```
 Now `NFS server` and `NFS client` configured completely.
 
-### Step 2 - Create Kubernetes cluster 
+## Step 2 - Create Kubernetes cluster 
 Run kubernetes cluster using `kubeadm-dind-cluster` preconfigured scripts for Kubernetes version 1.10 through 1.13 published as GitHub releases.
 ```
 $ wget https://github.com/kubernetes-sigs/kubeadm-dind-cluster/releases/download/v0.1.0/dind-cluster-v1.13.sh
@@ -60,4 +58,4 @@ kube-node-1   Ready     <none>    2m        v1.13.0
 kube-node-2   Ready     <none>    2m        v1.13.0
 ```
 
-### Step 3 - Create secrets for MySQL
+## Step 3 - Create secrets for MySQL
